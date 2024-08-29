@@ -1,9 +1,79 @@
-<html>
+<!-- Tab 창에 이미지 추가하기 기능 -->
+
+<!DOCTYPE html>
+<html lang = "ko"> <!-- 언어 선언 영어는 en -->
     <head>
-        <body>
-            Hello world!
-            오픈소스 스튜디오.
-            commit test
-        </body>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content= "IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20240829</title>
+        <link rel="shortcut icon" href="./dog.jpg">
+
+        <!-- '.' (클래스 선택자) / '#' (아이디 선택자) / 아무것도 입력하지 않은 것 (태그 선택자) -->
+        <style> 
+            .div_class {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 0.5rem;
+            }
+            #div_id2 {
+                font-size: 5rem;
+            }
+        </style>
     </head>
+
+    <body>
+        HELLO WORLD! <br/>
+        안녕하세요! <br/>
+        <font> font태그 입니다.</font>
+        <div id="div_id" class="div_class" style="color:red">div tag 예시임. id="div_test" class="div_class"</div>
+        <div id="div_id2" class="div_class" style="background-image: url('./dog.jpg')">사진으로 배경 넣는 법</div>
+
+        <img src="./cat.jpg" alt="sample image" onerror="alert('꽝!');" />  <!-- 실제로 이미지가 존재하지 않을 때: onerror는 일종의 listener -->
+        <img src="https://image.ajunews.com/content/image/2019/12/25/20191225170826943516.jpg" alt="image test" style="width: 100px; height:auto"/>
+        <img src="https://image.ajunews.com/content/image/2019/12/25/20191225170826943516.jpg" alt="image test" width="100px" height="100px"/>
+
+
+        <div>
+            H태그 입니다. 
+        </div>
+
+        <h1>h1 tag!!</h1>
+        <h2>h2 tag!!</h2>
+        <h3>h3 tag!!</h3>
+        <h4>h4 tag!!</h4>
+        <h5>h5 tag!!</h5>
+        <h6>h6 tag!!</h6>
+
+        <p>패러그래프 1</p>
+        <p>패러그래프 2</p>
+
+        <ul>
+            <li>순서와 상관 없는 리스트!</li>
+            <li>순서와 상관 없는 리스트!</li>
+            <li>순서와 상관 없는 리스트!</li>
+            <li>순서와 상관 없는 리스트!</li>
+        </ul>
+
+        <ol>
+            <li>순서에 따라 생성되는 리스트!</li>
+            <li>순서에 따라 생성되는 리스트!</li>
+            <li>순서에 따라 생성되는 리스트!</li>
+            <li>순서에 따라 생성되는 리스트!</li>
+        </ol>
+
+        <a href="https://www.millie.co.kr/v3/post/683814?nav_hidden=y" target="_blank">밀리 시리즈로 이동해주세요!!</a>   <!-- target="_blank": 새로운 탭에 띄우겠다는 뜻 -->
+        <br/>
+        <a href="javascript:alert(1);">a tag인데 js 실행!</a> 
+    
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        111        22222 <br/>
+                         44444<br/>
+        1111&nbsp;2222  <br/>
+    </body>
 </html>
