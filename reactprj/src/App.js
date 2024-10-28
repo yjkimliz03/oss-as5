@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Component1 from './Component1';
+import Component2 from './Component2';
+import Component3 from './Component3';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
           20241028 react oss class
         </p>
         <Component1 />
+        <Component2 />
+        <Component3 />
         <a
           className="App-link"
           href="https://reactjs.org"
