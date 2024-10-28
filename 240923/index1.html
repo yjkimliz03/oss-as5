@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <form action="complete.html">
+        <div class="container">
+
+        </div>
+        <div class="mb-3">
+        <label for="create_book_title" name="title" class="form-label">Book Title</label>
+        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+        <label for="create_book_author" name="author" class="form-label">Book Author</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <select class="form-control" name="cate">
+                <option value="event">시사</option>
+                <option value="sports">스포츠</option>
+                <option value="economy">경제</option>
+
+            </select>
+        <input type="hidden1" name="agree" id="create_book_agreed" value="0"/>
+        <input type="checkbox" class="form-check-input" id="create_book_agree" onchange="listener_agreed()">
+        <label class="form-check-label" for="create_book_agree">책 등록에 동의하시겠습니까?</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+        function listener_agreed(){
+        let checked = $("#create_book_agree").prop("checked");
+        if(checked){
+          $("#create_book_agreed").val("1");
+        } else {
+          $("#create_book_agreed").val("0");
+        }
+      }
+        // localStorage.setItem("book_1", "123")
+    </script>
+</body>
+</html>
