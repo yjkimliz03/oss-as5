@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .visibility_hidden {
+            visibility: hidden;
+        }
+
+        #div_id1 {
+            font-size: 5rem;
+            border: #000000 dotted 10px;
+            border-radius: 30px;
+            border-color: pink;
+
+            /* 하나의 값만 주면 4개 방향 다 적용해줍니다. */
+            margin: 50px; 
+
+            /* 각 방향별로도 설정 가능 적용해줍니다. */
+            margin-top: 10px;
+            margin-left: 30;
+            margin-right: 12;
+            margin-bottom: 60;
+        }
+
+        #div_id2 {
+            font-size: 5rem;
+            border: #000000 solid 5px;
+            background-color: blue;
+            
+            /* 한번에 적용도 가능: top right bottom left */
+            margin: 50px 40px 30px 20px; /* 하나의 값만 주면 4개 방향 다 적용해줍니다. */
+        }
+
+        #padding {
+            font-size: 5rem;
+            font-weight: lighter;
+            border: #000000 solid 5px;
+            background-color: yellowgreen;
+            padding: 100px 40px 30px 20px;
+
+        }
+
+        #div_font_style {
+            font-size: 50px;
+            font-weight: 14px;
+            border:#000000 solid 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 50vw;
+            height: 20vh;
+        }
+
+        #font_style {
+            font-weight: 600; /* 기본 div 두께 */
+        }
+
+        #font_style2 {
+            font-weight: 900;
+        }
+
+        #div_font_color {
+            color: red;
+            /* background-color: rgba(100, 120, 50, 0.5); rgba에서 a는 투명도 설정 0과 1 사이 */
+            background-color: rgb(100, 120, 50); opacity: 0.5;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>
+        안녕 위의 공간
+    </div>
+    <div id = "div_id1">
+        안녕
+    </div>
+    <div id = "div_id2">
+        안녕
+    </div>
+    <div id = "padding">
+        padding
+    </div>
+    <div id = "div_font_style">
+        안녕 아래의 공간
+    </div>
+    <div id = "font_style">
+        글자 스타일 (600)
+    </div>
+    <div id = "font_style2">
+        글자 스타일2 (900)
+    </div>
+
+    <div id = "div_font_color">
+        글자 스타일 입니다. 
+    </div>
+
+    <div class="div_class_hide" onclick="this.classList.add('hide')">
+        글자가 사라지는 마술
+    </div>
+    
+    <div class="div_class_hide" onclick="this.classList.add('visibility_hidden')">
+        글자가 사라지는 마술2
+    </div>
+
+    <div id="div_class_hide" onclick="$(this).addClass('hide')">
+        글자 사라지는 마술1 ㅎㅎ
+    </div>
+    <div id="div_class_hidden" onclick="$(this).addClass('visibility_hidden')">
+        글자 사라지는 마술2 ㅎㅎ
+    </div>
+    
+    <b>
+        진하게!
+    </b>
+
+    <div id ="div_position_fixed" style="position: fixed; top:50px; left:300px; background-color: yellow;">
+        fixed position 
+    </div>
+    <div id ="div_position_fixed" style="position: absolute; top:0px; background-color: blue; z-index: 20;">
+        fixed position 2
+    </div>
+    <div id ="div_position_fixed" style="position: absolute; top:10px; background-color: yellow; z-index: 30px;">
+        fixed position 3
+    </div>
+
+    <table style="width: 100%; text-align: center; border: 1px solid #000000;">
+        <thead>
+            <tr>
+                <th style="border-bottom: 1px solid #3d3d3d">#</th>
+                <th>제목</th>
+                <th>숫자1</th>
+                <th colspan="2">숫자2</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <a>111</a>
+    <a>123</a>
+    <a style="float:right">222</a>
+
+</body>
+</html>

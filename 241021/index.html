@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Web</title>
+  </head>
+  <body>
+    <div id = "div_json_test">-</div>
+
+    <script>
+      // 자바스크립트 배열 선언해보기 
+      // 2가지 방법으로!!
+      // sort / push / foreach
+      let array_fruit = ["apple", "orange", "melon"];
+      alert(array_fruit.length);
+      alert(array_fruit[1]);
+
+      let array_newfruits = ["apple1", "orange1", "melon1"];
+      alert(array_newfruits.length);
+      alert(JSON.stringify(array_newfruits));
+
+      array_fruit.sort();
+      alert(array_fruit[1]);
+
+      array_fruit.push("pear");
+      alert(array_fruit.length);
+
+      let sum = 0;
+      let array_numbers = [19, 10, 54, 207];
+      array_numbers.forEach(array_function);
+      function array_function(item) {
+        sum += item;
+      }
+      alert("sum: " + sum);
+
+      let sum2 = 0;
+      for (let item of array_numbers) {
+        sum2 += item;
+      }
+      alert("sum2: " + sum2);
+
+      array_numbers.forEach(sumFunction2)
+      // 1번째 파라미터는 array_numbers[0], ....
+      // 2번째 파라미터는 0, 1 ....
+      // 3번째 파라미터는 array_numbers
+      function sumFunction2 (item, index, arr) {
+        arr[index] = item * 10;
+        alert(index + " : " + arr[index]);
+      }
+      alert(array_numbers[0]);
+
+      let sum3 = 0;
+      for (let i=0; i<array_numbers.length; i++) {
+        sum3 += array_numbers[i];
+      }
+      alert("sum3: " + sum3);
+
+      let dfruits = ['banana', 'orange', 'mango'];
+      let fruit1 = dfruits[0];  // banana
+      let fruit2 = dfruits[1];  // orange
+      let fruit3 = dfruits[2];  // mango
+
+      let[fruit01, , fruit02] = dfruits;  // 구조분해 할당. 쉼표로 건너뛸 수 있음. 배열의 범위를 넘어서면 error를 반환하지 않고 undefined를 반환한다. 
+      alert(fruit01);
+
+      let {[0]: fruit001, [1]: fruit002} = dfruits;
+      alert(fruit002);
+      
+      let person = {
+        firstName : "길동",
+        lastName: "홍", 
+        age : 700
+      };
+      let lastName1 = person.lastName;
+      let lastName01 = person['lastName'];
+
+      // let {lastName, firstName} = person;
+      // alert("lastName1 : " + lastName1);
+      // alert("lastName01 : " + lastName01);
+
+      let{firstName, lastName, contry = "KOREA"} = person;
+      alert("lastName1 : " + lastName1);
+      alert("contry : " + contry);
+      alert("height : " + height);
+      height = 170;
+      alert("height : " + height);
+
+      let {lastName : name, firstName : first} = person;  // 해당 변수가 이미 사용중일 때 alias 설정하는 법
+      alert(name);
+      alert(first);
+
+      // JSON 시작
+      let jsonObject = {
+        "firstName" : "길동",
+        "lastName": "홍", 
+        "age" : 700
+      };
+      let jsonArray = ["1", "2", "3"];
+      alert(jsonObject.firstName);
+      alert(jsonArray[1]);
+
+      //document.getElementbyId("div_json_test").innerHTML = "";
+      //객체를 문자열로 변환도 가능하고, 
+      $("div_json_test").html(JSON.stringify(jsonObject));
+
+      let string_json = $("div_json_test").html();
+      alert(string_json);
+      //문자열로 되어 있는 것을 객체로 변환도 가능하다. 
+      let afterParseJson = JSON.parse(string_json);
+      alert(afterParseJson.age);
+
+      // Create an Object
+      let car = {};
+      // Add properties
+      car.name = "Genesis";
+      car.year = "2024";
+
+      let myCar = { 
+            name: 'Ford', 
+            year: 2015, 
+            print : function(){ 
+                return "Car Info [" + this.name + "]" + this.year + "";
+            } 
+      }; 
+      alert(myCar.print());
+
+      // Class 사용!
+      class Car { 
+            constructor(name) { 
+                this.brand = name; 
+            } 
+            present() { return 'I have a ' + this.brand; } 
+        
+        } 
+        class Model extends Car { 
+            constructor(name, model) { 
+                super(name); 
+                this.model = model; 
+            }   
+            show() { 
+                return this.present() + ', it is a ' + this.model 
+            } 
+        } 
+        const mycar = new Model("Hyundai", "Genesis"); 
+        alert(mycar.show()); 
+        
+        alert(location.href);
+        //https://www.naver.com/
+
+    </script>
+    
+
+  </body>
+</html>
