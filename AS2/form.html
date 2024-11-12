@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Dynamic web page: 22200150 김유진</h2>
+    <div>등록된 element를 하나씩 클릭해서 삭제하는 것도 가능합니다.</div>
+    <input type="text" id="input_append">
+    <button onclick="listener_append()">등록</button>
+    <button onclick="delete_all()">전체 삭제</button>
+    <div id="div_append">
+        
+    </div>
+    <script>
+        function listener_append() {
+            let div_append = document.getElementById("div_append");
+            let input_append = document.getElementById("input_append").value;
+
+            if(input_append === '' || input_append === "undefined") {
+                return false;
+            }
+            div_append.innerHTML += "<div onclick='listener_remove(this)'>" +input_append+"</div>";
+            document.getElementById("input_append").value = "";
+        }
+
+        function listener_remove(obj) {
+            obj.remove();
+        }
+
+        function delete_all() {
+            let div_append = document.getElementById("div_append");
+            div_append.innerHTML = "";
+            document.getElementById("input_append").value = "";
+        }
+    </script>
+</body>
+</html>
